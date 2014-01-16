@@ -1,0 +1,12 @@
+RewriteEngine on
+#RewriteRule ^$ /index.php [L]
+RewriteCond $1 !^(index\.php|assets|images|admintheme|theme|css|js|upload)
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#ForceType application/octet-stream
+#<FilesMatch "(?i)\.(gif|jpe?g|png)$">
+ # ForceType none
+#</FilesMatch>
+
+# Prevent IE from MIME-sniffing:
+#Header set X-Content-Type-Options "nosniff"
